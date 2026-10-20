@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Axiome Pay — криптокарта для оплаты в 170+ странах | @dvnews</title>
+<meta name="description" content="Виртуальная и физическая Visa от Axiome Pay: оплата криптой в 170+ странах, Apple Pay и Google Pay. Промокод DVNEWS25.">
+<style>
+:root{
+  --bg:#08090d;
+  --bg2:#0d0f16;
+  --card:rgba(255,255,255,.035);
+  --stroke:rgba(255,255,255,.09);
+  --text:#eef0f6;
+  --muted:#9aa1b2;
+  --accent:#7c5cff;
+  --accent2:#22d3a8;
+  --radius:20px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.glow{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(900px 500px at 12% -8%, rgba(124,92,255,.28), transparent 62%),
+    radial-gradient(760px 480px at 92% 8%, rgba(34,211,168,.14), transparent 60%),
+    radial-gradient(900px 700px at 50% 115%, rgba(124,92,255,.12), transparent 65%),
+    var(--bg);
+}
+header{
+  position:sticky;top:0;z-index:50;
+  backdrop-filter:blur(14px);
+  background:rgba(8,9,13,.72);
+  border-bottom:1px solid var(--stroke);
+}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.01em}
+.dot{width:26px;height:26px;border-radius:9px;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 0 22px rgba(124,92,255,.55)}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:13px 22px;border-radius:14px;font-weight:600;font-size:15px;
+  transition:.2s transform,.2s box-shadow,.2s background;white-space:nowrap;
+}
+.btn-primary{
+  background:linear-gradient(135deg,#8b6bff,#5b3df0);
+  color:#fff;box-shadow:0 10px 30px rgba(107,78,255,.35);
+}
+.btn-primary:hover{transform:translateY(-1px);box-shadow:0 14px 40px rgba(107,78,255,.5)}
+.btn-ghost{border:1px solid var(--stroke);background:var(--card);color:var(--text)}
+.btn-ghost:hover{background:rgba(255,255,255,.07)}
+.nav .btn{padding:9px 16px;font-size:14px;border-radius:11px}
+
+/* HERO */
+.hero{padding:76px 0 56px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--muted);
+  border:1px solid var(--stroke);background:var(--card);
+  padding:7px 13px;border-radius:999px;margin-bottom:22px;
+}
+.badge i{width:7px;height:7px;border-radius:50%;background:var(--accent2);box-shadow:0 0 10px var(--accent2)}
+h1{font-size:clamp(34px,4.6vw,58px);line-height:1.06;letter-spacing:-.03em;font-weight:800;margin-bottom:20px}
+h1 span{background:linear-gradient(100deg,#a78bfa,#22d3a8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:18px;color:var(--muted);max-width:560px;margin-bottom:30px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.promo{
+  display:inline-flex;align-items:center;gap:10px;font-size:14px;color:var(--muted);
+  border:1px dashed rgba(124,92,255,.55);border-radius:12px;padding:9px 12px 9px 14px;
+  cursor:pointer;transition:.2s background;
+}
+.promo:hover{background:rgba(124,92,255,.1)}
+.promo b{color:#c4b5fd;letter-spacing:.06em}
+.promo small{color:#6f7688;font-size:12px}
+.hero-art{position:relative;display:flex;justify-content:center}
+.card3d{
+  width:100%;max-width:380px;aspect-ratio:1.586/1;border-radius:22px;
+  background:linear-gradient(135deg,#171a26 0%,#0e1018 55%,#1a1430 100%);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 30px 70px rgba(0,0,0,.6),0 0 60px rgba(124,92,255,.18);
+  padding:22px;display:flex;flex-direction:column;justify-content:space-between;
+  transform:rotate(-6deg) rotateY(8deg);
+  transition:transform .5s cubic-bezier(.2,.7,.2,1);
+}
+.card3d:hover{transform:rotate(-2deg) rotateY(0)}
+.card3d .top{display:flex;justify-content:space-between;align-items:flex-start}
+.card3d .chip{width:42px;height:32px;border-radius:8px;background:linear-gradient(135deg,#d8c78a,#8f7a3e)}
+.card3d .brand{font-weight:700;font-size:15px;letter-spacing:.02em}
+.card3d .num{font-size:17px;letter-spacing:.16em;color:#cfd3e2;font-variant-numeric:tabular-nums}
+.card3d .foot{display:flex;justify-content:space-between;font-size:11px;color:#8b90a3;letter-spacing:.08em}
+
+/* STATS */
+.stats{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--stroke);
+  border:1px solid var(--stroke);border-radius:var(--radius);overflow:hidden;margin:10px 0 84px;
+}
+.stat{background:var(--bg2);padding:26px 22px;text-align:center}
+.stat b{display:block;font-size:26px;letter-spacing:-.02em;font-weight:800}
+.stat span{font-size:13px;color:var(--muted)}
+
+/* SECTIONS */
+section{padding:0 0 84px}
+.kicker{font-size:13px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent2);margin-bottom:12px;font-weight:600}
+h2{font-size:clamp(26px,3.2vw,38px);letter-spacing:-.02em;line-height:1.12;margin-bottom:14px;font-weight:800}
+.sub{color:var(--muted);max-width:620px;margin-bottom:34px;font-size:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{
+  background:var(--card);border:1px solid var(--stroke);border-radius:var(--radius);
+  padding:26px;transition:.25s transform,.25s border-color;
+}
+.card:hover{transform:translateY(-3px);border-color:rgba(124,92,255,.4)}
+.card .ico{
+  width:42px;height:42px;border-radius:12px;display:grid;place-items:center;
+  background:linear-gradient(135deg,rgba(124,92,255,.28),rgba(34,211,168,.18));
+  border:1px solid var(--stroke);margin-bottom:16px;font-size:20px;
+}
+.card h3{font-size:18px;margin-bottom:8px;letter-spacing:-.01em}
+.card p{color:var(--muted);font-size:14.5px}
+.price{display:inline-block;margin-top:14px;font-size:13px;color:#c4b5fd;border:1px solid rgba(124,92,255,.35);padding:5px 10px;border-radius:8px}
+
+/* STATUSES */
+.statuses{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.st{
+  background:var(--card);border:1px solid var(--stroke);border-radius:16px;padding:18px 16px;text-align:center;
+}
+.st .name{font-weight:700;font-size:15px;margin-bottom:4px}
+.st .req{font-size:12px;color:var(--muted);margin-bottom:12px;min-height:32px}
+.st .fee{font-size:22px;font-weight:800;letter-spacing:-.02em}
+.st .fee small{font-size:11px;color:var(--muted);font-weight:500;display:block;letter-spacing:.04em}
+.st.hot{border-color:rgba(124,92,255,.55);background:linear-gradient(180deg,rgba(124,92,255,.14),rgba(255,255,255,.02))}
+
+/* STEPS */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:s}
+.step{position:relative;padding-top:12px}
+.step:before{
+  counter-increment:s;content:counter(s);
+  display:grid;place-items:center;width:34px;height:34px;border-radius:10px;
+  background:rgba(124,92,255,.18);border:1px solid rgba(124,92,255,.45);
+  color:#c4b5fd;font-weight:700;font-size:14px;margin-bottom:16px;
+}
+.step h3{font-size:17px;margin-bottom:6px}
+.step p{color:var(--muted);font-size:14.5px}
+
+/* FAQ */
+.faq{display:grid;gap:10px}
+details{
+  background:var(--card);border:1px solid var(--stroke);border-radius:14px;padding:18px 20px;
+}
+details[open]{border-color:rgba(124,92,255,.4)}
+summary{cursor:pointer;font-weight:600;font-size:15.5px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";color:var(--accent2);font-size:20px;line-height:1}
+details[open] summary:after{content:"–"}
+details p{color:var(--muted);font-size:14.5px;margin-top:12px}
+
+/* FINAL CTA */
+.final{
+  border:1px solid rgba(124,92,255,.35);border-radius:26px;padding:52px 32px;text-align:center;
+  background:
+    radial-gradient(600px 260px at 50% -20%, rgba(124,92,255,.28), transparent 70%),
+    linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
+  margin-bottom:64px;
+}
+.final h2{margin-bottom:12px}
+.final p{color:var(--muted);max-width:540px;margin:0 auto 26px}
+
+footer{border-top:1px solid var(--stroke);padding:30px 0 44px;color:#767d8f;font-size:12.5px}
+footer p{max-width:840px}
+footer a{color:#9aa1b2;border-bottom:1px solid rgba(255,255,255,.15)}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr;gap:36px;padding-top:48px}
+  .hero-art{order:-1}
+  .card3d{max-width:330px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .grid3,.steps{grid-template-columns:1fr}
+  .statuses{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:520px){
+  .nav .btn span{display:none}
+  .cta-row .btn{flex:1}
+}
+</style>
+</head>
+<body>
+<div class="glow"></div>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="dot"></span>DVNEWS<span style="color:var(--muted);font-weight:500">× Axiome Pay</span></a>
+    <a class="btn btn-primary" href="https://t.me/axiome_pay_bot/axiomepayapp?startapp=DVNEWS25" target="_blank" rel="noopener">Открыть карту <span>→</span></a>
+  </div>
+</header>
+
+<main id="top">
+<div class="wrap">
+
+  <div class="hero">
+    <div>
+      <div class="badge"><i></i> Партнёрская страница канала @dvnews</div>
+      <h1>Криптокарта, которая проходит там, где <span>ваша не проходит</span></h1>
+      <p class="lead">Виртуальная и физическая Visa от Axiome Pay. Оплата криптой в 170+ странах, Apple Pay и Google Pay, лимит до $50 000 на одну транзакцию. Промокод <b style="color:#c4b5fd">DVNEWS25</b> даёт статус Silver сразу — пополнение 3,0% вместо 4,0%.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://t.me/axiome_pay_bot/axiomepayapp?startapp=DVNEWS25" target="_blank" rel="noopener">Открыть карту за $50</a>
+        <a class="btn btn-ghost" href="#statuses">Как это работает</a>
+      </div>
+      <div class="promo" id="promo" title="Скопировать промокод">
+        Промокод <b>DVNEWS25</b> — статус Silver сразу <small id="copyHint">нажмите, чтобы скопировать</small>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="card3d">
+        <div class="top"><span class="brand">AXIOME PAY</span><span class="chip"></span></div>
+        <div class="num">•••• •••• •••• 2049</div>
+        <div class="foot"><span>VIRTUAL VISA PRO</span><span>DVNEWS25</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><b>170+</b><span>стран приёма</span></div>
+    <div class="stat"><b>10 млн+</b><span>торговых точек</span></div>
+    <div class="stat"><b>$50 000</b><span>лимит транзакции</span></div>
+    <div class="stat"><b>до 0,3 AXP</b><span>кэшбэк за $1</span></div>
+  </div>
+
+  <section>
+    <div class="kicker">Что внутри</div>
+    <h2>Две карты под разные задачи</h2>
+    <p class="sub">Виртуальная — чтобы оплачивать подписки и сервисы сразу. Физическая — чтобы снимать наличные и платить в офлайне.</p>
+    <div class="grid3">
+      <div class="card">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="3"/><path d="M2 10h20"/></svg></div>
+        <h3>Virtual Visa Pro</h3>
+        <p>Мгновенный выпуск, оплата ChatGPT, Claude, Gemini и тысяч других сервисов. Apple Pay и Google Pay, без лимита на траты.</p>
+        <span class="price">Выпуск $50</span>
+      </div>
+      <div class="card">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 8h10M7 12h4M7 16h6"/></svg></div>
+        <h3>Physical Visa Pro</h3>
+        <p>Пластик с доставкой: покупки, снятие наличных, полная интеграция с Apple Pay и Google Pay.</p>
+        <span class="price">Выпуск $100</span>
+      </div>
+      <div class="card">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="1.6"><path d="M12 2l9 5v10l-9 5-9-5V7l9-5z"/><path d="M12 8v8M8 10l4 2 4-2"/></svg></div>
+        <h3>Статусы AXP</h3>
+        <p>Держите токен AXP на кошельке — комиссия за пополнение падает с 4,0% до 1,0%, а кэшбэк растёт до 0,3 AXP за каждый потраченный доллар. Промокод сразу даёт Silver: 3,0% без покупки токена.</p>
+        <span class="price">До 0,3 AXP / $1</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="statuses">
+    <div class="kicker">Статусы</div>
+    <h2>Чем больше AXP — тем дешевле пополнение</h2>
+    <p class="sub">Обычно Silver требует держать 5 000 AXP. С промокодом <b style="color:#c4b5fd">DVNEWS25</b> статус даётся сразу при регистрации — комиссия за пополнение 3,0% вместо 4,0%. Дальше учитываются AXP на балансе кошелька и токены в пуле AXP/AXM, а для подтверждения статуса кошелёк Axiome Wallet связывается с аккаунтом Axiome Pay.</p>
+    <div class="statuses">
+      <div class="st"><div class="name">Blue</div><div class="req">без условий</div><div class="fee">4,0%<small>пополнение</small></div></div>
+      <div class="st hot"><div class="name">Silver</div><div class="req">по промокоду — без 5 000 AXP</div><div class="fee">3,0%<small>пополнение</small></div></div>
+      <div class="st"><div class="name">Gold</div><div class="req">20 000 AXP</div><div class="fee">2,6%<small>пополнение</small></div></div>
+      <div class="st"><div class="name">Black</div><div class="req">50 000 AXP</div><div class="fee">1,9%<small>пополнение</small></div></div>
+      <div class="st"><div class="name">Platinum</div><div class="req">100 000 AXP</div><div class="fee">1,0–1,4%<small>пополнение</small></div></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="kicker">Как начать</div>
+    <h2>Три шага — и карта у вас</h2>
+    <div class="steps">
+      <div class="step"><h3>Перейдите по ссылке</h3><p>Открывает бота Axiome Pay в Telegram. Введите промокод DVNEWS25 при регистрации — статус Silver активируется сразу.</p></div>
+      <div class="step"><h3>Пройдите KYC и выпустите карту</h3><p>Виртуальная — сразу в приложении, физическая — с доставкой до двери.</p></div>
+      <div class="step"><h3>Пополните и платите</h3><p>Крипта на балансе Axiome, оплата в 170+ странах, Apple Pay и Google Pay под рукой.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="kicker">FAQ</div>
+    <h2>Коротко о главном</h2>
+    <div class="faq">
+      <details><summary>Сколько стоит выпуск?<span></span></summary><p>Virtual Visa Pro — $50, Physical Visa Pro — $100. Комиссия за пополнение зависит от статуса AXP: от 4,0% на Blue до 1,0–1,4% на Platinum. Комиссия за каждый 3DS-код — $0,03.</p></details>
+      <details><summary>Где принимается карта?</summary><p>Более чем в 10 млн торговых точек в 170+ странах. Полная поддержка Apple Pay и Google Pay. Снятие наличных — с комиссией 3% (минимум $1), до трёх снятий в день.</p></details>
+      <details><summary>Что будет, если карту заблокируют?</summary><p>Средства не теряются: их можно перевести на другую активную карту Axiome Pay. KYC позволяет восстановить доступ к аккаунту в любой момент.</p></details>
+      <details><summary>Что даёт промокод DVNEWS25?</summary><p>Сразу статус Silver: комиссия за пополнение 3,0% вместо 4,0% на Blue, без необходимости держать 5 000 AXP. Вводите DVNEWS25 при регистрации по ссылке — статус активируется сразу.</p></details>
+    </div>
+  </section>
+
+  <div class="final">
+    <h2>Крипта должна тратиться</h2>
+    <p>Откройте карту за пару минут с промокодом DVNEWS25, получите Silver сразу и платите там, где принимают Visa — от подписок в ChatGPT до кофе у дома.</p>
+    <div class="cta-row" style="justify-content:center">
+      <a class="btn btn-primary" href="https://t.me/axiome_pay_bot/axiomepayapp?startapp=DVNEWS25" target="_blank" rel="noopener">Открыть карту</a>
+      <a class="btn btn-ghost" href="https://t.me/axiome_pay_bot/axiomepayapp?startapp=DVNEWS25" target="_blank" rel="noopener">Промокод DVNEWS25</a>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Это партнёрская страница Telegram-канала <a href="https://t.me/dvnews" target="_blank" rel="noopener">@dvnews</a>. Axiome Pay — сторонний сервис, не банк и не эмитент банковских карт; условия, комиссии и доступность зависят от страны и могут меняться. Проверяйте актуальные данные в приложении. Криптовалюта — рискованная область: храните только те средства, потерей которых готовы рискнуть.</p>
+    <p style="margin-top:10px">© 2026 DVNEWS · партнёрский материал</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var p=document.getElementById('promo'), h=document.getElementById('copyHint');
+  p.addEventListener('click',function(){
+    var t='DVNEWS25';
+    var done=function(){h.textContent='скопировано';setTimeout(function(){h.textContent='нажмите, чтобы скопировать'},1600)};
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(done,done)}
+    else{var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(a);done()}
+  });
+})();
+</script>
+</body>
+</html>
