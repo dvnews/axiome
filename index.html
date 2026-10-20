@@ -138,6 +138,12 @@ h2{font-size:clamp(26px,3.2vw,38px);letter-spacing:-.02em;line-height:1.12;margi
 .card h3{font-size:18px;margin-bottom:8px;letter-spacing:-.01em}
 .card p{color:var(--muted);font-size:14.5px}
 .price{display:inline-block;margin-top:14px;font-size:13px;color:#c4b5fd;border:1px solid rgba(124,92,255,.35);padding:5px 10px;border-radius:8px}
+.getbtn{
+  display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:10px 16px;border-radius:11px;
+  border:1px solid rgba(124,92,255,.45);background:rgba(124,92,255,.12);color:var(--text);
+  font-weight:600;font-size:14px;text-decoration:none;transition:.2s;
+}
+.getbtn:hover{background:rgba(124,92,255,.22);transform:translateY(-1px)}
 
 /* STATUSES */
 .statuses{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
@@ -315,6 +321,32 @@ footer a{color:#9aa1b2;border-bottom:1px solid rgba(255,255,255,.15)}
       <div class="step"><h3>Перейдите по ссылке</h3><p>Открывает бота Axiome Pay в Telegram. Введите промокод DVNEWS25 при регистрации — статус Silver активируется сразу.</p></div>
       <div class="step"><h3>Пройдите KYC и выпустите карту</h3><p>Виртуальная — сразу в приложении, физическая — с доставкой до двери.</p></div>
       <div class="step"><h3>Пополните и платите</h3><p>Крипта на балансе Axiome, оплата в 170+ странах, Apple Pay и Google Pay под рукой.</p></div>
+    </div>
+  </section>
+
+  <section id="apps">
+    <div class="kicker">Приложение</div>
+    <h2>Одно приложение — или вообще без установки</h2>
+    <p class="sub">Axiome Pay есть на iPhone и Android, а если ставить ничего не хочется — тот же интерфейс открывается прямо в Telegram.</p>
+    <div class="grid3">
+      <div class="card">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="1.6"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 19h2"/></svg></div>
+        <h3>iPhone</h3>
+        <p>Бета-сборка через TestFlight. Установите TestFlight, откройте ссылку и примите приглашение — приложение встанет как обычное.</p>
+        <a class="getbtn" href="https://testflight.apple.com/join/jn2BUs6Z" target="_blank" rel="noopener">Открыть TestFlight <span>→</span></a>
+      </div>
+      <div class="card">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="1.6"><rect x="5" y="2" width="14" height="20" rx="2.5"/><path d="M9 5h6M10 18h4"/></svg></div>
+        <h3>Android</h3>
+        <p>Приложение Axiome Pay в Google Play: KYC, выпуск виртуальной карты, баланс и пополнение — всё в одном месте.</p>
+        <a class="getbtn" href="https://play.google.com/store/apps/details?id=com.axiome.pay" target="_blank" rel="noopener">Скачать в Google Play <span>→</span></a>
+      </div>
+      <div class="card">
+        <div class="ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#c4b5fd" stroke-width="1.6"><path d="M21 4L3 11l6 2 2 6 4-5 6-10z"/><path d="M9 13l4-4"/></svg></div>
+        <h3>Telegram</h3>
+        <p>Мини-приложение внутри бота: устанавливать ничего не нужно. Промокод DVNEWS25 вводится при регистрации — статус Silver активируется сразу.</p>
+        <a class="getbtn" href="https://t.me/axiome_pay_bot/axiomepayapp?startapp=DVNEWS25" target="_blank" rel="noopener">Открыть в Telegram <span>→</span></a>
+      </div>
     </div>
   </section>
 
