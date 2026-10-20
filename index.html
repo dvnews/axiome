@@ -128,6 +128,7 @@ h2{font-size:clamp(26px,3.2vw,38px);letter-spacing:-.02em;line-height:1.12;margi
 .card{
   background:var(--card);border:1px solid var(--stroke);border-radius:var(--radius);
   padding:26px;transition:.25s transform,.25s border-color;
+  display:flex;flex-direction:column;
 }
 .card:hover{transform:translateY(-3px);border-color:rgba(124,92,255,.4)}
 .card .ico{
@@ -136,10 +137,10 @@ h2{font-size:clamp(26px,3.2vw,38px);letter-spacing:-.02em;line-height:1.12;margi
   border:1px solid var(--stroke);margin-bottom:16px;font-size:20px;
 }
 .card h3{font-size:18px;margin-bottom:8px;letter-spacing:-.01em}
-.card p{color:var(--muted);font-size:14.5px}
+.card p{color:var(--muted);font-size:14.5px;margin-bottom:16px}
 .price{display:inline-block;margin-top:14px;font-size:13px;color:#c4b5fd;border:1px solid rgba(124,92,255,.35);padding:5px 10px;border-radius:8px}
 .getbtn{
-  display:inline-flex;align-items:center;gap:8px;margin-top:16px;padding:10px 16px;border-radius:11px;
+  display:inline-flex;align-items:center;gap:8px;margin-top:auto;padding:10px 16px;border-radius:11px;
   border:1px solid rgba(124,92,255,.45);background:rgba(124,92,255,.12);color:var(--text);
   font-weight:600;font-size:14px;text-decoration:none;transition:.2s;
 }
